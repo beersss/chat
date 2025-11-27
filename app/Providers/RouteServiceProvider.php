@@ -19,6 +19,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/home';
 
+    // 第一个\是对第二个\的转译
+    // 让控制器支持前端脚手架写法
+    protected $namespace = 'App\\Http\\Controllers';
+
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      *
@@ -34,6 +38,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+                // 让控制器支持前端脚手架写法
+                ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
     }
