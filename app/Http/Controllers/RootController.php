@@ -8,6 +8,7 @@ class RootController extends Controller
 {
     public function root()
     {
-        return 'Root Controller';
+        session()->flash('info', '欢迎来到Laravel实战项目');
+        return view('pages.root');
     }
 }
