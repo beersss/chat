@@ -1,0 +1,56 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Fontawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+
+html {
+    // 设置相对定位的基准点
+    position: relative;
+    // 设置高度 或100hv
+    height: 100%;
+}
+
+// 通过伪类，鼠标悬停a标签时有以个下划线出来  !important是加强权重
+a:hover{
+    text-decoration: underline !important;
+}
+
+body {
+    // 设置字体
+    font-family: -apple-system,BlinkMacSystemFont,"Microsoft YaHei UI",Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-size: 14px;
+}
+
+
+
+#base {
+    margin-bottom: 60px;
+}
+
+nav.my_navbar{
+    border-top: 4px solid darkcyan;
+    margin-bottom: 36px;
+}
+
+small.footer{
+    background-color: #000;
+    color:#ccc;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+}
+
+
