@@ -60,6 +60,25 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        {{--         验证码          --}}
+                        <div class="row mb-3">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-end">{{ __('Captcha') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror" name="captcha" required>
+                                <img  class="img-thumbnail mt-2 my_captcha"
+                                      src="{{ captcha_src('flat') }}"
+                                      alt="验证码"
+                                      title="点击可重新获取验证码"
+                                      onclick="this.src='/captcha/flat?'+Math.random()"
+                                >
+                                @error('captcha')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

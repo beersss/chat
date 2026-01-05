@@ -2,15 +2,18 @@
 
 namespace App\Models;
 
+// 这个MustVerifyEmail是一个接口
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+// 这个MustVerifyEmail是个Trait 重命名为MustVerifyEmailTrait 避免和上面的接口重名
+use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable,MustVerifyEmailTrait;
 
     /**
      * The attributes that are mass assignable.

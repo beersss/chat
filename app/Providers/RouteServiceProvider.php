@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/';
 
     // 第一个\是对第二个\的转译
     // 让控制器支持前端脚手架写法

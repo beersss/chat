@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+// 注册用户通过这个Trait 实现
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -47,12 +48,17 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    // 表单字段验证
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'captcha'=>['required', 'captcha']
+        ],[
+            'captcha.required'=>'验证码必填',
+            'captcha.captcha'=>'验证码不正确'
         ]);
     }
 
@@ -62,6 +68,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
+    // 在数据库中创建一个新的用户
     protected function create(array $data)
     {
         return User::create([
