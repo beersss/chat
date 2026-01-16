@@ -22447,36 +22447,33 @@ readers do not read off random characters that represent icons */
   --fa: "\f3f6";
 }
 
-html {
-  position: relative;
-  height: 100%;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei UI", Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a:hover {
   text-decoration: underline !important;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei UI", Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-size: 14px;
-}
-
-#base {
-  margin-bottom: 60px;
+#app {
+  margin-bottom: 16px;
+  flex: 1;
 }
 
 nav.my_navbar {
   border-top: 4px solid darkcyan;
-  margin-bottom: 36px;
+  margin-bottom: 16px;
 }
 
-small.footer, .footer.small {
+footer.footer {
   background-color: #000;
   color: #ccc;
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  height: 45px;
+  height: 60px;
   line-height: 45px;
 }
 

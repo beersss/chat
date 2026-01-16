@@ -13,7 +13,7 @@
 </head>
 <body>
 @include('layouts._header')
-<div id="base" class="container">
+<div id="app" class="container">
     @include('shard._messages')
     @yield('content')
 </div>
